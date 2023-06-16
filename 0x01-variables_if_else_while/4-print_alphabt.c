@@ -15,7 +15,7 @@ q = 'q';
 e = 'e';
 for (i = 0; i < 26; i++)
 {
-if ((alpha != q) || (alpha != e))
+if ((alpha != q) && (alpha != e))
 {
 	putchar(alpha++);
 }
