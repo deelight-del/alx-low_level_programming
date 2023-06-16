@@ -14,8 +14,10 @@ putchar(i + '0');
 if (i == 9)
 	putchar('\n');
 else
-	putchar(',');
-	putchar(' ');
+{
+putchar(',');
+putchar(' ');
+}
 }
 return (0);
 }
