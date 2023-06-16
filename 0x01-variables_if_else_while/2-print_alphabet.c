@@ -7,9 +7,9 @@
 
 int main(void)
 {char alpha;
-int final;
+int i;
 alpha = 'a';
-for(int i = 0; i < 26; i++)
+for(i = 0; i < 26; i++)
 putchar(alpha++);
 putchar('\n');
 return (0);
