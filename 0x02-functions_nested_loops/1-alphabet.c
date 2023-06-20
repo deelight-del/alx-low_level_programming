@@ -12,8 +12,8 @@ void print_alphabet(void)
 char alpha;
 alpha = 'a';
 int i;
-
-for (i = 0; i < 26; i++)
+i = 0;
+for (i; i < 26; i++)
 {
 putchar(alpha++);
 }
