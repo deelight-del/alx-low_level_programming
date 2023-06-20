@@ -12,7 +12,7 @@ char str[] = "_putchar";
 char *p;
 for (p = str; *p != '\0'; p++)
 {
-_putchar(*p);
+putchar(*p);
 }
 putchar('\n');
 return (0);
