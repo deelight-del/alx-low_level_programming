@@ -12,10 +12,9 @@ void print_alphabet(void)
 char alpha;
 alpha = 'a';
 int i;
-i = 0;
-for (i; i < 26; i++)
+for (i = 0; i < 26; i++)
 {
-putchar(alpha++);
+_putchar(alpha++);
 }
 return;
 }
