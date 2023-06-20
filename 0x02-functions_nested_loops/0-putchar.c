@@ -16,4 +16,4 @@ _putchar(*p);
 }
 putchar('\n');
 return (0);
-};
+}
