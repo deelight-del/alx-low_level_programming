@@ -3,7 +3,7 @@
 /**
 *main - This will print _putchar
 *
-*Result: 0(Success)
+*Return: 0(Success)
 */
 
 int main(void)
