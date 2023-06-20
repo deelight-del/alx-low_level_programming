@@ -4,7 +4,9 @@
 int main (void)
 
 {
-_putchar('g');
+int r;
+r = _isalpha('G');
+printf("%d", r);
 return (0);
 }
 
