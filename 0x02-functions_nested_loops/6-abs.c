@@ -7,7 +7,7 @@
 *Return: +n(if > 0), +0(if 0), and +n(if < 0)
 */
 
-int print_sign(int n)
+int _abs(int n)
 {
 int ret;
 if (n >= 0)
