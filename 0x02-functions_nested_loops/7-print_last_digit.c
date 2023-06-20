@@ -13,5 +13,6 @@ int ret;
 ret = n % 10;
 if (ret < 0)
 	ret = ret * -1;
+_putchar('0' + ret);
 return (ret);
 }
