@@ -8,12 +8,10 @@
 
 void times_table(int n)
 {
-if (n < 0 || n > 15)
-{
-return;
-}
 int i, j;
 int tens, hun, rem_hun, unit, val;
+if (n < 0 || n > 15)
+_putchar('\0');
 for (i = 0; i < n; i++)
 {
 for (j = 0; j < n; j++)
