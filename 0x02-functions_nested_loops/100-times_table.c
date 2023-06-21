@@ -8,8 +8,7 @@
 
 void print_times_table(int n)
 {
-int i, j;
-int tens, hun, rem_hun, unit, val;
+int i, j, tens, hun, rem_hun, unit, val;
 if (n < 0 || n > 15)
 return;
 for (i = 0; i <= n; i++)
@@ -32,8 +31,8 @@ _putchar(unit + '0');
 if (j == n)
 _putchar('\n');
 else
-_putchar(',');
 {
+_putchar(',');
 if (val + i > 9)
 {
 _putchar(' ');
