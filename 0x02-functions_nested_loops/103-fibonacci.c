@@ -20,11 +20,13 @@ b = 2;
 for (i = 0; i < 48; i++)
 {
 ab = a + b;
-if (i <= 4000000 && i % 2 == 0)
+if ((ab <= 4000000) && (ab % 2 == 0))
 {
 sum = sum + ab;
 }
+a = b;
+b = ab;
 }
-printf("%ld\n", sum);
+printf("%ld\n", sum + 2);
 return (0);
 }
