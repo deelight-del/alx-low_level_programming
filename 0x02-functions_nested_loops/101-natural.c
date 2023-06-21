@@ -11,10 +11,12 @@ int main(void)
 {
 int i, j;
 j = 0;
-for (i = 0; i <= 1024; i++);
+for (i = 1; i <= 1024; i++);
 {
 if (i % 3 == 0 || i % 5 == 0)
+{
 j = j + i;
+}
 }
 printf("%d", j);
 printf("\n");
