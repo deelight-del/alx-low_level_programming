@@ -1,18 +1,16 @@
 #include <stdio.h>
 #include "main.h"
-/*jack_bauer - Prints every minute
+/**jack_bauer - Prints every minute and time.
 *
 *Return: returns void
 */
 
 void jack_bauer(void)
 {
-
 int j;
 int k;
 int m;
 int l;
-
 for (j = 0; j < 3; j++)
 {
 if (j != 2)
@@ -29,11 +27,7 @@ _putchar(58);
 _putchar(l + '0');
 _putchar(m + '0');
 _putchar('\n');
-}
-}
-}
-}
-
+}}}}
 else
 {
 for (k = 0; k < 4; k++)
@@ -48,10 +42,6 @@ _putchar(58);
 _putchar(l + '0');
 _putchar(m + '0');
 _putchar('\n');
-}
-}
-}
-}
-}
+}}}}}
 return;
 }
