@@ -2,7 +2,7 @@
 #include "main.h"
 /**
 *print_times_table - Prints n times table, starting from 0
-*
+*@n: number to multiplied unto
 *Return: void
 */
 
@@ -33,12 +33,12 @@ _putchar('\n');
 else
 {
 _putchar(',');
-if (val + i > 9)
+if ((val + i) > 99)
 {
 _putchar(' ');
-_putchar(' ');
 }
-else if(val + i > 99)
+else if ((val + i) > 9)
+_putchar(' ');
 _putchar(' ');
 else
 {
