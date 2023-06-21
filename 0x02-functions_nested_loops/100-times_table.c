@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "main.h"
 /**
-*times_table - Prints n times table, starting from 0
+*print_times_table - Prints n times table, starting from 0
 *
 *Return: void
 */
 
-void times_table(int n)
+void print_times_table(int n)
 {
 int i, j;
 int tens, hun, rem_hun, unit, val;
