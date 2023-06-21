@@ -11,10 +11,10 @@ void print_times_table(int n)
 int i, j;
 int tens, hun, rem_hun, unit, val;
 if (n < 0 || n > 15)
-_putchar('\0');
-for (i = 0; i < n; i++)
+return;
+for (i = 0; i <= n; i++)
 {
-for (j = 0; j < n; j++)
+for (j = 0; j <= n; j++)
 {
 val = i * j;
 hun = val / 100;
