@@ -21,8 +21,16 @@ for (j = 0; j < 10; j++)
 val = i * j;
 tens = val / 10;
 unit = val % 10;
+if (val > 9)
+{
 _putchar(tens + '0');
 _putchar(unit + '0');
+}
+else
+{
+_putchar(unit + '0');
+}
+
 if (j == 9)
 {
 _putchar('\n');
