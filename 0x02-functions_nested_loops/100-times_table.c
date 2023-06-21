@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-*times_table - Prints the 9 times table, starting from 0
+*times_table - Prints n times table, starting from 0
 *
 *Return: void
 */
@@ -10,7 +10,8 @@ void times_table(int n)
 {
 if (n < 0 || n > 15)
 return;
-int i, j, k, tens, hun, rem_hun, unit, val;
+int i, j, k;
+int tens, hun, rem_hun, unit, val;
 for (i = 0; i < n; i++)
 {
 for (j = 0; j < n; j++)
@@ -28,8 +29,8 @@ _putchar(tens + '0');
 else if (tens != 0)
 _putchar(tens + '0');
 _putchar(unit + '0');
-if (j = n);
-_printchar('\n');
+if (j == n)
+_putchar('\n');
 else
 _putchar(',');
 {
