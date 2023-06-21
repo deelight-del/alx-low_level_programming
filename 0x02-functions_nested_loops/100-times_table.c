@@ -34,12 +34,12 @@ else
 {
 _putchar(',');
 if ((val + i) > 99)
+_putchar(' ');}
+else if ((val + i) > 9)
 {
 _putchar(' ');
+_putchar(' ');
 }
-else if ((val + i) > 9)
-_putchar(' ');
-_putchar(' ');
 else
 {
 _putchar(' ');
