@@ -32,7 +32,7 @@ if (j == 9)
 _putchar('\n');
 else
 {
-if (val < 8)
+if ((val + i) < 10)
 {
 _putchar(',');
 _putchar(' ');
