@@ -25,7 +25,7 @@ for (m = 0; m < 10; m++)
 {
 _putchar(j + '0');
 _putchar(k + '0');
-_putchar(59);
+_putchar(58);
 _putchar(l + '0');
 _putchar(m + '0');
 _putchar('\n');
@@ -44,7 +44,7 @@ for (m = 0; m < 10; m++)
 {
 _putchar(j + '0');
 _putchar(k + '0');
-_putchar(59);
+_putchar(58);
 _putchar(l + '0');
 _putchar(m + '0');
 _putchar('\n');
