@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
-/**jack_bauer - Prints every minute and time.
+/**
+*jack_bauer - Prints every minute and time.
 *
 *Return: returns void
 */
