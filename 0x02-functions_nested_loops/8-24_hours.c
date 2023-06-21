@@ -22,12 +22,14 @@ for (k = 0; k < 10; k++)
 for (l = 0; l < 6; l++)
 {
 for (m = 0; m < 10; m++)
+{
 _putchar(j + '0');
 _putchar(k + '0');
 _putchar(59);
 _putchar(l + '0');
 _putchar(m + '0');
 _putchar('\n');
+}
 }
 }
 }
