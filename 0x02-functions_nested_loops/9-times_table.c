@@ -25,12 +25,19 @@ if (val > 9)
 {
 _putchar(tens + '0');
 _putchar(unit + '0');
+if (j == 9)
+{
+_putchar('\n');
 }
 else
 {
-_putchar(unit + '0');
-}
+_putchar(',');
+_putchar(' ');
+}}
 
+else
+{
+_putchar(unit + '0');
 if (j == 9)
 {
 _putchar('\n');
@@ -40,6 +47,6 @@ else
 _putchar(',');
 _putchar(' ');
 _putchar(' ');
-}}}
+}}}}
 return;
 }
