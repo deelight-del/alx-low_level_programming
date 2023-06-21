@@ -13,7 +13,7 @@ int k;
 int m;
 int l;
 
-for (j = 0, j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 if (j != 2)
 {
