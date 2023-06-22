@@ -3,6 +3,7 @@
 /**
 * print_diagonal - Print diagonal line of size n
 *@n: number of times to print diagonal line
+*
 *Return: void
 */
 
@@ -10,6 +11,7 @@ void print_diagonal(int n)
 {
 	int i;
 	int k;
+	int j;
 
 	if (n > 0)
 	{
