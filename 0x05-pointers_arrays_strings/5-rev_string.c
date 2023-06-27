@@ -11,7 +11,7 @@
 void rev_string(char *s)
 {
 	int len;
-	char *rev;
+	char rev[];
 	char *p;
 	int i;
 
@@ -24,6 +24,9 @@ void rev_string(char *s)
 		*(rev + i) = *p;
 		i++;
 	}
-	
-	*s = *rev;
+	/*make s equal to rev for each element */
+	for (i = 0; i < len; i++)
+	{
+		*(s + i) = *(rev + i);
+	}
 }
