@@ -12,7 +12,7 @@ int _strlen(char *s)
 	int ret;
 	int i;
 
-	for (i = 0; *s != NULL; i++)
+	for (i = 0; *s != '\0'; i++)
 	{
 		s++; /* increase pointer by one */
 	}
