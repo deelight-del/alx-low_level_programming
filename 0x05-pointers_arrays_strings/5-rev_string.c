@@ -11,12 +11,13 @@ void print_rev(char *s)
 {
 	int i = _strlen(s);
 	int j;
-	char *temphold;
+	char temphold[60];
 	int k = 0;
 
 	for (j = i - 1; j >= 0; j--)
 	{
 		*(temphold + k) = s[j];
+		k++;
 	}
 	
 	for (k = 0; k < i; k++)
