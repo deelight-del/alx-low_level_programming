@@ -18,31 +18,22 @@ int main(void)
 
 	f = 2;
 	pf = 1;
-	num = 612;
+	num = 612852475143;
 
-	for (i = 2; i < num/2; i = i++)
+	for (i = 3; i < num/2; i = i + 2)
 	{
 		if (num % i == 0)
 		{
 			f = i;
-
-			if (f == 2)
+			for (j = 2; j < f/2; f++)
 			{
-				pf = 2;
-			}
-			else
-			{
-				for (j = 2; j <= f/2; j++)
-				{	
-					if (f % j == 0)
-					{
-						pf = 0;
-						break;
-					}
-					else
-					{
-						pf = f;
-					}
+				if (f % j == 0)
+				{
+					brek;
+				}
+				else
+				{
+					pf = f;
 				}
 			}
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define LARGEST 1000000000000
 /**
 *main - prints the first 50 fib
 *
@@ -12,6 +13,8 @@ int i;
 unsigned long int a;
 unsigned long int b;
 unsigned long int ab;
+int hold1, hold2, hold3;
+
 a = 1;
 b = 2;
 printf("%ld, ", a);
