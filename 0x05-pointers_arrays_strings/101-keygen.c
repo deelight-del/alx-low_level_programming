@@ -13,7 +13,7 @@
 int main(void)
 {
 	int i;
-	static int Arr[size];
+	int Arr[size];
 
 	srand(time(NULL));
 
@@ -21,4 +21,5 @@ int main(void)
 	{
 		Arr[i] = rand();
 	}
+	return (0)
 }
