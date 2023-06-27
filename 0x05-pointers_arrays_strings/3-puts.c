@@ -9,11 +9,32 @@
 
 void _puts(char *str)
 {
-	int i;
+	int i = _strlen(str);
+	int j;
 
-	for (i = 0; *str != '\0'; i++)
+	for (j = 0; j <= i; j++)
 	{
-		_putchar(*(str + i));
+		_putchar(str[j]);
 	}
 	_putchar('\n');
+}
+
+/**
+*_strlen - returns length of the string
+*@s: pointer variable
+*
+*Return: int (length of string)
+*/
+
+int _strlen(char *s)
+{
+	int ret;
+	int i;
+
+	for (i = 0; *s != '\0'; i++)
+	{
+		s++; /* increase pointer by one */
+	}
+	ret = i;
+	return (ret);
 }
