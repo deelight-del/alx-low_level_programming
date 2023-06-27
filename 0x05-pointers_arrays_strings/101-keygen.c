@@ -10,7 +10,7 @@
 *Return: 0(success)
 */
 
-int *main(void)
+int main(void)
 {
 	int i;
 	static int Arr[size];
@@ -21,5 +21,4 @@ int *main(void)
 	{
 		Arr[i] = rand();
 	}
-return (Arr);
 }
