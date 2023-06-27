@@ -4,6 +4,7 @@
 /**
 *print_array - prints n number of arrays
 *@a: array to print from
+*@n: number of times to print array
 *
 *Return: void
 */
@@ -12,11 +13,11 @@ void print_array(int *a, int n)
 {
 	int i;
 
-	for (i = 0; i < n - 1; i ++)
+	for (i = 0; i < n - 1; i++)
 	{
-		printf(a[i]);
+		printf("%d", a[i]);
 		printf(", ");
 	}
-	printf(a[n - 1]);
+	printf("%d", a[n - 1]);
 	printf("\n");
 }
