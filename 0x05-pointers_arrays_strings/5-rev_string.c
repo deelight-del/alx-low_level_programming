@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-*print_rev - prints string in reverse to stdout
+*rev_string - prints string in reverse to stdout
 *@s: string to print
 *
 *Return: void
@@ -18,8 +18,7 @@ void rev_string(char *s)
 	{
 		*(temphold + k) = s[j];
 		k++;
-	}
-	
+	}	
 	for (k = 0; k < i; k++)
 	{
 		*(s + k) = temphold[k];
