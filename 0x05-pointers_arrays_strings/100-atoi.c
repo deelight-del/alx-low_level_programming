@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <stdbool.h>
+#include <limits.h>
 /**
 *_atoi - converts a string to an integer
 *@s: string to convert to int
@@ -28,8 +29,9 @@ int _atoi(char *s)
 				{
 					return INT_MIN;
 				}
-			result = result * 10 + (*s - '0');
-			started = true;
+			}
+		result = result * 10 + (*s - '0');
+		started = true;
 		}
 		else if (!started && *s == '-')
 		{
