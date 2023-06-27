@@ -21,9 +21,11 @@ void rev_string(char *s)
 
 	for (p = s + (len - 1); p >= s; p--)
 	{
-		*rev(i) = *p;
+		*(rev + i) = *p;
 		i++;
 	}
 	
 	*s = *rev;
+
+	return *s
 }
