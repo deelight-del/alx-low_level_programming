@@ -13,7 +13,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	char *p;
 	int i = 0;
-	int size = sizeof(src);
+	/*int size = sizeof(src);*/
 
 	/*loop through dest without the terminating byte*/
 	for (p = dest; *p != '\0'; p++)
@@ -31,10 +31,8 @@ char *_strncat(char *dest, char *src, int n)
 		else
 			break;
 	}
-	if (n > size)
-	{
-		*(dest + i) = '\0';
-	}
+
+	*(dest + i) = '\0';
 
 
 	return (dest);
