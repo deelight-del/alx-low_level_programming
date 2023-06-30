@@ -14,13 +14,13 @@ int _strcmp(char *s1, char *s2)
 
 	for (; *s1 != '\0'; s1++, s2++)
 	{
-		if (*s1 != '\0')
+		if (*s1 != *s2)
 		{
 			val = *s1 - *s2;
 			return (val);
 		}
 	}
-	val = *s1 - *s2;   /*NULL is 0 on asci char*/
+	val = *s1 - *s2;   /*NULL is 0 on asci char; is s1 = s2, or s2 > s1*/
 	return (val);
 
 }
