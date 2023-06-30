@@ -12,29 +12,15 @@ int _strcmp(char *s1, char *s2)
 {
 	int val;
 
-	for (; *s1 != '\0'; s1++)
+	for (; *s1 != '\0'; s1++, s2++)
 	{
-		if (*s1 < *s2)
+		if (*s1 != '\0')
 		{
-			val = -15;
+			val = *s1 - *s2;
 			return (val);
 		}
-		else if (*s1 > *s2)
-		{
-			val = 15;
-			return (val);
-		}
-		s2++;
 	}
-	if (*s1 == '\0' && *s2 == '\0')
-	{
-		val = 0;
-		return (val);
-	}
-	else if (*s1 == '\0' && *s2 != '\0')
-	{
-		val = -15;
-	}
+	val = *s1 - *s2;   /*NULL is 0 on asci char*/
 	return (val);
 
 }

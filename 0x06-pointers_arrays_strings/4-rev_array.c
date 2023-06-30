@@ -12,8 +12,8 @@
 void reverse_array(int *a, int n)
 {
 	int *p;
-	int i;
-	int temp[100];
+	int i = 0;
+	int temp[1000];
 
 	p = (a + n - 1);
 
