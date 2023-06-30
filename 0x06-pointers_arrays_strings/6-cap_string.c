@@ -2,7 +2,7 @@
 #include "main.h"
 /**
 *cap_string - converts lower case characters after special to uppercase
-*@char: string to convert to uppercase
+*@str: string to convert to uppercase
 *
 *Return: uppercase of char
 */
@@ -29,9 +29,17 @@ char *cap_string(char *str)
 	return (str);
 }
 
+/**
+*check - checks for special characters
+*@chr: string to checke
+*
+*Return: returns 1 or 0
+*/
+
+
 int check(char chr)
 {
-	char standards[30] = {' ', ',', '\t', '.', ' ', '\n', ';', '!', \
+	char standards[30] = {' ', ',', '\t', '.', ' ', '\n', ';', '!',
 		'?', '"', '(', ')', '{', '}', 'c'};
 	int i;
 
