@@ -16,16 +16,15 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*s1 < *s2)
 		{
-			s2++;
 			val = -15;
 			return (val);
 		}
 		else if (*s1 > *s2)
 		{
-			s2++;
 			val = 15;
 			return (val);
 		}
+		s2++;
 	}
 	if (*s1 == '\0' && *s2 == '\0')
 	{
