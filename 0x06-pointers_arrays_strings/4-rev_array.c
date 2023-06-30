@@ -17,14 +17,13 @@ void reverse_array(int *a, int n)
 
 	p = (a + n - 1);
 
-	for (i = n - 1; i > 0; i++)
+	for (i = 0; i <= n - 1; i++)
 	{
 		*(temp + i) = *p;
 		p--;
 	}
-	for (i = 0; i < n - 1; i++)
+	for (i = 0; i <= n - 1; i++)
 	{
-		*(a + i) = *temp;
-		temp[0]++;
+		*(a + i) = temp[i];
 	}
 }
