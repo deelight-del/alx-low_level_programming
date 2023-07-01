@@ -22,6 +22,7 @@ char *leet(char *str)
 	leet['e'] = '3';
 	leet['o'] = '0';
 	leet['t'] = '7';
+	leet['l'] = '1';
 
 	for (; *p != 0; p++, i++)
 	{
