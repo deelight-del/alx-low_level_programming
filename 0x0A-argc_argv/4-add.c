@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "main.h"
 
 /**
 *main - adds the positive numbers
@@ -9,7 +10,6 @@
 *
 *Return: result from addition
 */
-int is_str_digit(char *str);
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 	printf("%d\n", result);
 	return (0);
 }
+
 
 /**
 *is_str_digit - check if string does not conttain char or symbols
