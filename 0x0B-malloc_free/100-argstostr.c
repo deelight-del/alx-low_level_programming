@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 		mem[count] = '\n';
 		count += 1;
 	}
-	for (; count < size; count++)
+	for (; count < size - 1; count++)
 		mem[count] = '\n';
 	return (mem);
 }
