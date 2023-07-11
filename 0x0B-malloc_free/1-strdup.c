@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 /**
 *_strdup - copies a string to another memory
@@ -9,14 +10,24 @@
 
 char *_strdup(char *str)
 {
-	int len = strlen(str);
+	int len;
 	int i;
-	char *str_arr = malloc(len + 1);
+	char *str_arr;
 
-	if (!str || str_arr == NULL)
+	if (str == NULL)
 		return (NULL);
+
+	len = strlen(str);
+	str_arr = malloc(len + 1);
+
+	if (str_arr == NULL)
+	{
+		return (NULL);
+	}
 	if (len == 0)
+	{
 		str_arr[0] = str[0];
+	}
 	else
 	{
 		for (i = 0; i < len; i++)
