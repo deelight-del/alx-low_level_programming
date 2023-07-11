@@ -20,6 +20,9 @@ int **alloc_grid(int width, int height)
 
 	mem_array = malloc(sizeof(int *) * height);
 
+	if (mem_array == NULL)
+		return (NULL);
+
 	for (i = 0; i < height; i++)
 		mem_array[i] = malloc(sizeof(int) * width);
 	for (i = 0; i < height; i++)
