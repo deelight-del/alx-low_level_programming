@@ -22,7 +22,9 @@ char *argstostr(int ac, char **av)
 
 	for (i = 1; i < ac; i++)
 		count += strlen(av[i]) + 1;
+
 	size = (sizeof(char) * count) + 12;
+
 	mem = malloc((sizeof(char) * count) + 12);
 
 	if (mem == NULL)
@@ -42,7 +44,6 @@ char *argstostr(int ac, char **av)
 		mem[count] = '\n';
 		count += 1;
 	}
-	for (; count < size - 1; count++)
-		mem[count] = '\n';
+
 	return (mem);
 }
