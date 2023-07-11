@@ -43,6 +43,6 @@ char *argstostr(int ac, char **av)
 		count += 1;
 	}
 	for (; count < size; count++)
-		mem[count] = '\0';
+		mem[count] = '\n';
 	return (mem);
 }
