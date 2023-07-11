@@ -31,11 +31,12 @@ int **alloc_grid(int width, int height)
 		mem_array[i] = malloc(sizeof(int) * width);
 		if (mem_array[i] == NULL)
 		{
-			for (j = 0; j < i; j++)
+			for (j = 0; j <= i; j++)
 			{
 				free(mem_array[j]);
-				return (NULL);
 			}
+			free(mem_array);
+			return (NULL);
 		}
 	}
 	for (i = 0; i < height; i++)
