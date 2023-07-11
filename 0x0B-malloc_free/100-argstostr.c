@@ -15,15 +15,12 @@ char *argstostr(int ac, char **av)
 	int i = 0;
 	int count = 0;
 	char *p;
-	int size;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 1; i < ac; i++)
 		count += strlen(av[i]) + 1;
-
-	size = (sizeof(char) * count) + 12;
 
 	mem = malloc((sizeof(char) * count) + 12);
 
