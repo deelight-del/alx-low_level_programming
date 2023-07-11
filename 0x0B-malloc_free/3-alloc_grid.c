@@ -22,7 +22,8 @@ int **alloc_grid(int width, int height)
 
 	if (mem_array == NULL)
 	{
-		free(mem_array);
+		for (i = 0; i < height; i++)
+			free(mem_array[i]);
 		return (NULL);
 	}
 
