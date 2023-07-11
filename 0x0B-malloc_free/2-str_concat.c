@@ -14,7 +14,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *cat_str;
-	int i, j;
+	long unsigned int i, j;
 
 	if (s1 == NULL)
 		s1 = "";
