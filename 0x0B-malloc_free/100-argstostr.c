@@ -19,17 +19,17 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 		count += strlen(av[i]) + 1;
 
-	mem = malloc((sizeof(char) * count) + 12);
+	mem = malloc(sizeof(char) * count);
 
 	if (mem == NULL)
 		return (NULL);
 
 	count = 0;
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		p = av[i];
 
