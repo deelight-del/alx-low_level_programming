@@ -6,8 +6,9 @@
 *string_nconcat - concat s1 and n part of s2
 *@s1: first string to cat
 *@s2: second string to cat
-*n: number of s2 to cat
+*@n: number of s2 to cat
 *
+*Return: pointer
 */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -41,5 +42,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	mem[m + n] = '\0';
 
-	return mem;
+	return (mem);
 }
