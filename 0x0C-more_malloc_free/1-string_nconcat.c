@@ -33,11 +33,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		mem[i] = s1[i];
 	}
 
-	for (i = 0; m < (m + n); m++, i++)
+	for (i = 0; i < n; m++, i++)
 	{
 		mem[m] = s2[i];
 	}
-	mem[m] = '\0';
+	mem[m + n] = '\0';
 
 	return mem;
 }
