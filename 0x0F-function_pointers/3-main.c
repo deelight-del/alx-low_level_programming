@@ -25,18 +25,20 @@ int main(int ac, char *av[])
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 
-	if ((strcmp(av[2], "%") == 0 || strcmp(av[2], "/") == 0) && b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
 	fptr = get_op_func(av[2]);
 
 	if (fptr == NULL)
 	{
 		printf("Error\n");
 		exit(99);
+	}
+
+
+
+	if ((strcmp(av[2], "%") == 0 || strcmp(av[2], "/") == 0) && b == 0)
+	{
+		printf("Error\n");
+		exit(100);
 	}
 
 	result = fptr(a, b);
