@@ -30,6 +30,6 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 		if (i == n)
 			printf("\n");
 		else
-			printf(", ");
+			printf("%s", seperator);
 	}
 }
