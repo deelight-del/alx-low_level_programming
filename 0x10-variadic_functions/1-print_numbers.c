@@ -29,7 +29,7 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 
 		if (i == n)
 			printf("\n");
-		else
+		if (seperator != NULL)
 			printf("%s", seperator);
 	}
 	va_end(args);
