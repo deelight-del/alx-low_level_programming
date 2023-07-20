@@ -13,5 +13,17 @@
 void print_strings(const char *seperator, const unsigned int n, ...)
 {
 	va_list args;
-	if (
+	unsigned int i;
+	int len;
+	char *str;
+
+	if (seperator == NULL || n == 0)
+		return;
+
+	len = sizeof(int);
+	va_start(args, n);
+	for (i = 0; i < n; i++)
+	{
+		str = va_arg(args, sizeof(char) * len);
+	}
 }
