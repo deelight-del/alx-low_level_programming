@@ -2,6 +2,7 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 
 /**
 *print_strings - function to prints strings that are passed into it
