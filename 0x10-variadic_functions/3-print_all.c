@@ -17,15 +17,15 @@ void print_all(const char * const format, ...)
 	char *sep = "", *str, *nil = "(nil)";
 
 	if (format == NULL)
+	{
+		printf("\n");
 		return;
-
+	}
 	i = 0;
 	len = strlen(format);
-
 	va_start(args, format);
 	while (i < len)
 	{
-
 		switch (format[i])
 		{
 			case 'c':
