@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 {
 	int i, len;
 	va_list args;
-	char *sep = "", *str, *nil = "(nil)";
+	char *sep = "", *str;
 
 	if (format == NULL)
 	{
@@ -42,18 +42,31 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				if (str == NULL)
-				{
-					printf("%s%s", sep, nil);
-					sep = ", ";
-					break;
-				}
-				printf("%s%s", sep, str);
+				print_string(str, sep);
 				sep = ", ";
-				break;
 		}
 		i++;
 	}
 	printf("\n");
 	va_end(args);
+}
+
+/**
+  *print_string - checks and print strings appropritately
+  *@str: string to check and fix
+  *@sep: string seperator
+  *
+  *Return: void
+*/
+
+void print_string(char *str, char *sep)
+{
+	char *nil = "(nil)";
+
+	if (str == NULL)
+	{
+		printf("%s%s", sep, nil);
+		return;
+	}
+	printf("%s%s", sep, str);
 }
