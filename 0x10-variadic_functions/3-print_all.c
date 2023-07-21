@@ -16,34 +16,42 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *sep = "", *str, *nil = "(nil)";
 
+	if (format == NULL)
+		return;
+
 	i = 0;
 	len = strlen(format);
 
 	va_start(args, format);
 	while (i < len)
 	{
+
 		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", sep, (char) va_arg(args, int));
+				printf("%s%c", sep, va_arg(args, int));
+				sep = ", ";
 				break;
 			case 'i':
-				printf("%s%d", sep, (int) va_arg(args, int));
+				printf("%s%d", sep, va_arg(args, int));
+				sep = ", ";
 				break;
 			case 'f':
-				printf("%s%f", sep, (float) va_arg(args, double));
+				printf("%s%f", sep, va_arg(args, double));
+				sep = ", ";
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				if (str == NULL || strlen(str) == 0)
+				if (str == NULL)
 				{
 					printf("%s%s", sep, nil);
+					sep = ", ";
 					break;
 				}
 				printf("%s%s", sep, str);
+				sep = ", ";
 				break;
 		}
-		sep = ", ";
 		i++;
 	}
 	printf("\n");
