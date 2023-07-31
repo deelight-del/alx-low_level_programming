@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 /**
-  * print_list - function to print the eelement of a list_int LL
+  * print_listint - function to print the eelement of a list_int LL
   * @h: A head pointer that  points to the first node
   *
   *Return: len of elements in a typical LL
