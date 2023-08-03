@@ -25,7 +25,7 @@ int get_len(unsigned long int n)
 }
 
 /**
-  *save_as_str - function to save our respective value
+  *save_to_str - function to save our respective value
   *@n: value to save our
   *
   *Return: A pointer to a string
@@ -64,8 +64,12 @@ int get_bit(unsigned long int n, unsigned int index)
 	str = save_to_str(n);
 	if (str == NULL)
 		return (-1);
-
-	ret_value = (int)(str[index] - 48);
+	if (n == 0 || n == 1)
+	{
+		ret_value = (int)n;
+	}
+	else
+		ret_value = (int)(str[index] - 48);
 
 	free(str);
 
