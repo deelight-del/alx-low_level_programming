@@ -27,20 +27,19 @@ unsigned int power_get_bit(int num, unsigned int index)
 }
 
 /**
-  *set_bit - function to set appropriate bit
+  *clear_bit - function to clear appropriate bit
   *@n: value to set
   *@index: index of value bit to set to 1
   *
   *Return: The value that it is set to
   */
 
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	/*unsigned int len = get_len(*n);*/
 	unsigned long int bit;
 
 	bit = power_get_bit(2, index);
 
-	*n = *n | (unsigned long int)bit;
+	*n = *n & (~(unsigned long int)bit);
 	return (1);
 }
