@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include <string.h>
 
 /**
   *get_len - used to obtain the length of unsigned long int as a binar
@@ -72,7 +73,12 @@ int get_bit(unsigned long int n, unsigned int index)
 		ret_value = (int)n;
 	}
 	else
-		ret_value = (int)(str[index] - 48);
+	{
+		if (index >= strlen(str))
+			ret_value = 0;
+		else
+			ret_value = (int)(str[index] - 48);
+	}
 
 	free(str);
 
