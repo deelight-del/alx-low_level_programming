@@ -13,13 +13,31 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int count = 0;
-	int j, i;
+	unsigned long int bits_to_flip = n ^ m;
 
-	j = sizeof(unsigned long int);
+	count = brian_k(bits_to_flip);
 
-	for (i = j; i >= 0; i--)
+	return (count);
+}
+
+/**
+  *brian_k - Brian Kernigan algorithm for counting set bits
+  *@a: digit to count bit
+  *
+  *Return: The count of bits
+  */
+
+unsigned int brian_k(unsigned long int a)
+{
+	unsigned int count = 0;
+	unsigned long int b, c = a;
+
+	while (c)
 	{
-		count = count + (((m >> i) & 1) ^ ((n >> i) & 1));
+		b = a - 1;
+		c = a & b;
+		a = c;
+		count++;
 	}
 
 	return (count);
