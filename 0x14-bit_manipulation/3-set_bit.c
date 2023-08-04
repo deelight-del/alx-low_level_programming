@@ -41,6 +41,7 @@ unsigned int power_get_bit(int num, unsigned int index)
 	if (index == 0)
 	{
 		ret = 1;
+		return (ret);
 	}
 
 	for (i = 0; i < index - 1; i++)
