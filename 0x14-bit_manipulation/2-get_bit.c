@@ -56,11 +56,14 @@ char *save_to_str(unsigned long int n)
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int len = get_len(n), ret_value;
+	unsigned int ret_value, size;
 	char *str;
+	
+	size = (sizeof(unsigned long int) * 8) - 1;
 
-	if (index >= len)
+	if (index > size)
 		return (-1);
+
 	str = save_to_str(n);
 	if (str == NULL)
 		return (-1);
