@@ -59,11 +59,9 @@ unsigned int power_get_bit(int num, unsigned int index)
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int len = get_len(*n);
+	/*unsigned int len = get_len(*n);*/
 	unsigned long int bit;
 
-	if (index >= len)
-		return (-1);
 	bit = power_get_bit(2, index);
 
 	*n = *n | (unsigned long int)bit;
