@@ -36,7 +36,11 @@ unsigned int power_get_bit(int num, unsigned int index)
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
+	unsigned int size;
 	unsigned long int bit;
+	
+	if (index > size)
+		return (-1);
 
 	bit = power_get_bit(2, index);
 
