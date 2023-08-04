@@ -10,10 +10,12 @@
 
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
+	if (n <= 1)
+		_putchar(n + 48);
+	else
 	{
 		print_binary(n >> 1);
+		_putchar((n & 1) + 48);
 	}
-	_putchar((n & 1) + 48);
 }
 
