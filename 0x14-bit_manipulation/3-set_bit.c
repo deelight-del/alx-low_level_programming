@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
-  *power - function to take index and number to give a result of power
+  *power_get_bit - function to take index and number to give a result of power
   *@num: base number
   *@index: number to raise to power to
   *
