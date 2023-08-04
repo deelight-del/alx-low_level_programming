@@ -12,5 +12,6 @@ int get_len(unsigned long int n);
 char *save_to_str(unsigned long int n);
 unsigned int power_get_bit(int num, unsigned int index);
 unsigned int brian_k(unsigned long int a);
+int _putchar(char c);
 
 #endif
