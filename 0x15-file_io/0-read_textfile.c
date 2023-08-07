@@ -6,7 +6,7 @@
 /**
   *read_textfile - Read file and prints it to stdout
   *@filename: The name of the file to read from
-  *@letters: The numver of letters it should read and print
+  *@letter: The numver of letters it should read and print
   *
   *Return: A fd if success, but -1 if it fails
   */
@@ -25,13 +25,13 @@ ssize_t read_textfile(const char *filename, size_t letter)
 	str = malloc(sizeof(char) * letter);
 	if (str == NULL)
 	{
-		free (str);
-		close (fd);
+		free(str);
+		close(fd);
 		return (0);
 	}
 	n_ret = read(fd, str, letter);
 
 	dprintf(STDOUT_FILENO, "%s", str);
-	close (fd);
+	close(fd);
 	return (n_ret);
 }
