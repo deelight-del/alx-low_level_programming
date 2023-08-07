@@ -15,7 +15,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, n_write;
+	int fd, n_write, len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -23,12 +23,20 @@ int create_file(const char *filename, char *text_content)
 			S_IRUSR | S_IWUSR);
 	if (fd == -1)
 		return (-1);
-	n_write = write(fd, text_content, strlen(text_content));
-
-	if (n_write == -1)
+	if (text_content != NULL)
 	{
-		close(fd);
-		return (-1);
+		while (text_content[len])
+			len++;
 	}
+	if (text_content != NULL)
+	{
+		n_write = write(fd, text_content, len);
+		if (n_write == -1)
+		{
+			close(fd);
+			return (-1);
+		}
+	}
+	close(fd);
 	return (1);
 }
