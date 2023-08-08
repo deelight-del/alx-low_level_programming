@@ -32,6 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letter)
 	n_ret = read(fd, str, letter);
 
 	dprintf(STDOUT_FILENO, "%s", str);
+	free(str);
 	close(fd);
 	return (n_ret);
 }
