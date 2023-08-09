@@ -52,25 +52,41 @@ int write_file(char *filename)
   *copy_file - Function to copy from one file to another file
   *@fd_from: file descriptor to copy/read from
   *@fd_to: file descriptor to copy/write to
-  *@buffer: string buffer of maxsize to be copied to and from
   *
   *Return: 0 if successful, -1 or -2 otherwise
   */
 
-int copy_file(int fd_from, int fd_to, char *buffer)
+int copy_file(int fd_from, int fd_to)
 {
 	ssize_t n_read, n_write;
+	char *buffer;
 
-	n_read = read(fd_from, buffer, BUFFER_SIZE);
-	if (n_read == -1)
+	n_read = BUFFER_SIZE;
+	while (n_read == BUFFER_SIZE)
 	{
-		return (-1);
-	}
-	n_write = write(fd_to, buffer, n_read);
+		buffer = malloc(sizeof(char) * BUFFER_SIZE);
+		if (buffer == NULL)
+			n_read = -1;
+		else
+			n_read = read(fd_from, buffer, BUFFER_SIZE);
+		if (n_read == -1)
+		{
+			if (buffer != NULL)
+				free(buffer);
+			close_file(fd_to);
+			close_file(fd_from);
+			return (-1);
+		}
+		n_write = write(fd_to, buffer, n_read);
 
-	if (n_write == -1 || n_write != n_read)
-	{
-		return (-2);
+		if (n_write == -1 || n_write != n_read)
+		{
+			free(buffer);
+			close_file(fd_to);
+			close_file(fd_from);
+			return (-2);
+		}
+		free(buffer);
 	}
 	return (0);
 }
@@ -108,7 +124,6 @@ int close_file(int fides)
 
 int main(int argc, char **argv)
 {
-	char buffer[BUFFER_SIZE];
 	int fd_to, fd_from, copy, close_file_from, close_file_to;
 
 	if (argc != 3)
@@ -123,7 +138,7 @@ int main(int argc, char **argv)
 	if (fd_to == -1)
 		exit(99);
 
-	copy = copy_file(fd_from, fd_to, buffer);
+	copy = copy_file(fd_from, fd_to);
 	if (copy == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
