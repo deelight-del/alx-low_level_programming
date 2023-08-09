@@ -13,7 +13,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letter)
 {
-	ssize_t n_ret;
+	ssize_t n_read, n_write;
 	int fd;
 	char *str;
 
@@ -29,10 +29,21 @@ ssize_t read_textfile(const char *filename, size_t letter)
 		close(fd);
 		return (0);
 	}
-	n_ret = read(fd, str, letter);
-
-	dprintf(STDOUT_FILENO, "%s", str);
+	n_read = read(fd, str, letter);
+	if (n_read < 0)
+	{
+		close(fd);
+		free(str);
+		return (0);
+	}
+	n_write = write(STDOUT_FILENO, str, n_read);
+	if (n_write < n_read)
+	{
+		close(fd);
+		free(str);
+		return (0);
+	}
 	free(str);
 	close(fd);
-	return (n_ret);
+	return (n_read);
 }
