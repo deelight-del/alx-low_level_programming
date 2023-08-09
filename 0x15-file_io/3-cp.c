@@ -73,10 +73,6 @@ int copy_file(int fd_from, int fd_to)
 		{
 			if (buffer != NULL)
 				free(buffer);
-		/**
-		*	close_file(fd_to);
-		*	close_file(fd_from);
-		 */
 			return (-1);
 		}
 		n_write = write(fd_to, buffer, n_read);
@@ -84,10 +80,6 @@ int copy_file(int fd_from, int fd_to)
 		if (n_write == -1 || n_write != n_read)
 		{
 			free(buffer);
-		/**
-		*	close_file(fd_to);
-		*	close_file(fd_from);
-		 */
 			return (-2);
 		}
 		free(buffer);
