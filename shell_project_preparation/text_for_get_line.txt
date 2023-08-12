@@ -1,0 +1,4 @@
+This is the file I created
+for testing my get line function
+and delimiter testing,
+    Let's see our display here.
