@@ -76,7 +76,7 @@ char **string_to_tokens(char *string)
 	}
 	string_array[i] = token; /*NULL terminating array*/
 	free(string_cpy);
-	return (string_array);
+	return (string_array);  /*string_array must be freed by user program*/
 }
 
 
@@ -138,3 +138,25 @@ int main(void)
 	return (0);
 }
 */
+
+/**
+  *free_string_array - Function to free a string array
+  *@string_array: string array passed into func
+  *
+  *Return: 0
+  */
+
+int free_string_array(char **string_array)
+{
+	char *str = "placeholder";
+	int i = 0, j;
+
+	for(i = 0; str != NULL; i++)
+	{
+		str = string_array[i];
+	}
+	for (j = 0; j < i; j++)
+		free(string_array[j]);
+	free(string_array);
+	return (0);
+}
