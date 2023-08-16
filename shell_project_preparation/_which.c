@@ -80,7 +80,7 @@ int cmd_or_not(char *pathname)
 
 char *get_cmd_path(char *text_from_line)
 {
-	char *path_str, *token, *full_path;
+	char *path_str, *path_str_copy, *token, *full_path;
 	struct stat buf;
 
 	if (dir_or_not(text_from_line) == 0)
@@ -96,26 +96,32 @@ char *get_cmd_path(char *text_from_line)
 	}
 	else
 	{
-		path_str = getenv("PATH");
+		path_str_copy = getenv("PATH");
+		path_str = strdup(path_str_copy);
+		if (path_str == NULL)
+			return (NULL);
 		token = strtok(path_str, ":");
 		while (token != NULL)
 		{
 			full_path = malloc(sizeof(char) * 1024);
 			if (full_path == NULL)
+			{
+				free(path_str);
 				return (NULL);
+			}
 			strcpy(full_path, token);
-			if (full_path == NULL)
-				return (NULL);
 			strcat(full_path, "/");
 			strcat(full_path, text_from_line);
 			if (stat(full_path, &buf) == 0)
 			{
+				free(path_str);
 				return (full_path);
 			}
 			token = strtok(NULL, ":");
 			free(full_path);
 		}
 	}
+	free(path_str);
 	return (NULL);  /*free text, if str is not null*/
 }
 
@@ -140,12 +146,9 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		printf("index %d\n", i);
 		full_path_name = get_cmd_path(argv[i]);
 		print_path_name(full_path_name);
-		printf("ith argument is %s\n", argv[i]);
-		printf("index %d\n", i);
-		printf("full pathname is %s\n", full_path_name);
+		free(full_path_name);
 	}
 	return (0);
 }
