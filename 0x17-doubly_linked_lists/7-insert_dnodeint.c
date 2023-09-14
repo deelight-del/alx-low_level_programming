@@ -20,17 +20,26 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 		return (NULL);
-	if ((*head) == NULL)
-		(*head) = add_dnodeint_end(head, n);
+	if ((*head) == NULL || idx == 0)
+		newnode = add_dnodeint(head, n);
 	else
 	{
 		track = (*head);
 		for (i = 0; i <= idx; i++)
 		{
-			if (track == NULL && idx != i)
-				return (NULL);
+			if (track == NULL)
+			{
+				if (i == idx)
+				{
+					newnode = add_dnodeint_end(head, n);
+					break;
+				}
+				else
+					return (NULL);
+			}
 			if (idx == i)
 			{
+				printf("Before segfault\n");
 				newnode->n = n;
 				newnode->prev = track->prev;
 				track->prev->next = newnode;
