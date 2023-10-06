@@ -44,7 +44,7 @@ int main(void)
 	printf("The key here is %s, and value is %s, and the address is %p\n", key, value, (void *)node_ptr);
 	
 
-	hash_table_set(ht, "david", "");
+	hash_table_set(ht, "david", NULL);
 	idx = key_index((const unsigned char *) "david", 1024);
 	key = ht->array[idx]->key; /*ht->array[idx]->next->key; should give the same key as above --- joyful*/
 	value = ht->array[idx]->value; /*ht-array[idx]->next->value; should give the same value as above value -- praise*/
