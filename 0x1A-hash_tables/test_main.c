@@ -10,18 +10,23 @@
  *     */
 int main(void)
 {
-	char *s;
-	unsigned long int hash_table_array_size;
+	unsigned long int idx;
+	char *key, *value;
+	hash_node_t *node_ptr;
+	/*const unsigned char *arg_key = "betty";*/
+	hash_table_t *ht;
 
-	hash_table_array_size = 1024;
-	s = "cisfun";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "Don't forget to tweet today";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-	s = "98";
-	printf("%lu\n", hash_djb2((unsigned char *)s));
-	printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
+	(void) key;
+	(void) value;
+
+	ht = hash_table_create(1024);
+
+	/*print what you stored*/
+	idx = key_index((const unsigned char *) "betty", 1024);
+	/*key = ht->array[idx]->key;*/
+	node_ptr = (ht->array[idx]);
+	printf("The fault is from main, value of idx is: %p\n", (void *)node_ptr);
+
+	/*printf("The key here is, and value is %s\n", value);*/
 	return (EXIT_SUCCESS);
 }
