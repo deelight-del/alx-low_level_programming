@@ -59,17 +59,17 @@ hash_node_t *create_node(const char *key, const char *value)
 
 	node->key = malloc((sizeof(char) * strlen(key)) + 1);
 	node->value = malloc((sizeof(char) * strlen(value)) + 1);
-	node->next = malloc(sizeof(hash_node_t));
+/*	node->next = malloc(sizeof(hash_node_t));*/
 
-	if (node->key == NULL || node->value == NULL ||
-			node->next == NULL)
+	/*node->next == NULL)*/
+	if (node->key == NULL || node->value == NULL)
 	{
 		if (node->key)
 			free(node->key);
 		if (node->value)
 			free(node->value);
-		if (node->next)
-			free(node->next);
+		/*if (node->next)
+			free(node->next);*/
 		free(node);
 		return (NULL);
 	}
