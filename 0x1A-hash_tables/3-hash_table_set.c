@@ -15,7 +15,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *slot, *node, *temp;
+	hash_node_t *slot, *node;
 
 	if (key == NULL || key[0] == '\0')
 		return (0);
@@ -35,10 +35,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		temp = slot->next;
-		slot->next = node;
-		node->next = temp;
-		ht->array[index] = slot;
+		node->next = slot;
+		ht->array[index] = node;
 	}
 	return (1);
 }
