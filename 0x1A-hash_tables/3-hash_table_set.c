@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *slot, *node;
 
-	if (key == NULL || key[0] == '\0' || ht == NULL || value == NULL)
+	if (key == NULL || key[0] == '\0' || ht == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *) key, ht->size); /*index*/
@@ -26,7 +26,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	slot = ht->array[index]; /*slot shuld be a ptr to hash_node*/
 	node = create_node(key, value);
 	if (node == NULL)
+	{
 		return (0);
+	}
 
 	if (slot == NULL)
 	{
@@ -58,19 +60,24 @@ hash_node_t *create_node(const char *key, const char *value)
 		return (NULL);
 
 	node->key = malloc((sizeof(char) * strlen(key)) + 1);
-	node->value = malloc((sizeof(char) * strlen(value)) + 1);
-
-	if (node->key == NULL || node->value == NULL)
+	if (value)
 	{
-		if (node->key)
-			free(node->key);
-		if (node->value)
-			free(node->value);
-		free(node);
-		return (NULL);
+		node->value = malloc((sizeof(char) * strlen(value)) + 1);
+		if (node->key == NULL || node->value == NULL)
+		{
+			if (node->key)
+				free(node->key);
+			if (node->value)
+				free(node->value);
+			free(node);
+			return (NULL);
+		}
 	}
 	strcpy(node->key, key);
-	strcpy(node->value, value);
+	if (value == NULL)
+		node->value = NULL;
+	else
+		strcpy(node->value, value);
 	node->next = NULL;
 	return (node);
 }
