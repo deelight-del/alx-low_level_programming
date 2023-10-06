@@ -72,7 +72,10 @@ hash_node_t *create_node(const char *key, const char *value)
 		return (NULL);
 	}
 	strcpy(node->key, key);
-	strcpy(node->value, value);
+	if (value[0] == '\0')
+		node->value[0] = '\0';
+	else
+		strcpy(node->value, value);
 	node->next = NULL;
 	return (node);
 }
