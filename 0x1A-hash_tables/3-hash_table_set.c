@@ -29,12 +29,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	if (slot == NULL)
+	{
 		slot = node;
+		ht->array[index] = slot;
+	}
 	else
 	{
 		temp = slot->next;
 		slot->next = node;
 		node->next = temp;
+		ht->array[index] = slot;
 	}
 	return (1);
 }

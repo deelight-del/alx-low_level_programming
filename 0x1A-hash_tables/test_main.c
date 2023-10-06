@@ -16,17 +16,31 @@ int main(void)
 	/*const unsigned char *arg_key = "betty";*/
 	hash_table_t *ht;
 
-	(void) key;
-	(void) value;
-
 	ht = hash_table_create(1024);
+	hash_table_set(ht, "betty", "cool");
 
 	/*print what you stored*/
 	idx = key_index((const unsigned char *) "betty", 1024);
-	/*key = ht->array[idx]->key;*/
+	key = ht->array[idx]->key;
+	value = ht->array[idx]->value;
 	node_ptr = (ht->array[idx]);
-	printf("The fault is from main, value of idx is: %p\n", (void *)node_ptr);
 
-	/*printf("The key here is, and value is %s\n", value);*/
+	printf("The key here is %s, and value is %s, and the address is %p\n", key, value, (void *)node_ptr);
+	
+	
+	hash_table_set(ht, "joyful", "praise");
+	idx = key_index((const unsigned char *) "joyful", 1024);
+	key = ht->array[idx]->key;
+	value = ht->array[idx]->value;
+	node_ptr = (ht->array[idx]);
+	printf("The key here is %s, and value is %s, and the address is %p\n", key, value, (void *)node_ptr);
+	
+	hash_table_set(ht, "synaphea", "balablu");
+	idx = key_index((const unsigned char *) "synaphea", 1024);
+	key = ht->array[idx]->next->key;
+	value = ht->array[idx]->next->value;
+	node_ptr = (ht->array[idx]);
+	printf("The key here is %s, and value is %s, and the address is %p\n", key, value, (void *)node_ptr);
+	return (EXIT_SUCCESS);
 	return (EXIT_SUCCESS);
 }
