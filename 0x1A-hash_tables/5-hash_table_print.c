@@ -22,7 +22,7 @@ void hash_table_print(const hash_table_t *ht)
 		for (i = 0; i < ht->size; i++)
 		{
 			head = ht->array[i];
-			if (head)
+			while (head)
 			{
 				if (element_count > 0)
 					printf(", '%s':", head->key);
@@ -30,6 +30,8 @@ void hash_table_print(const hash_table_t *ht)
 					printf("'%s':", head->key);
 				printf(" '%s'", head->value);
 				element_count++;
+				if (head)
+					head = head->next;
 			}
 		}
 	}
