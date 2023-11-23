@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ This is the module for technical
 interview on calculating the island perimeter"""
+
+
 def island_perimeter(grid):
     """ The island perimeter to calculate the
     land perimeter of the island.
@@ -19,17 +21,13 @@ def island_perimeter(grid):
             if tile == 1:
                 p_contribution = 4
                 if (j != j_thresh):
-                    try:
-                        if (single_list[j + 1]) == 1:
-                            p_contribution -= 1
-                    except IndexError:
-                        pass
-                    #p_contribution -= 1
+                    if (single_list[j + 1]) == 1:
+                        p_contribution -= 1
                 if (j != 0) and single_list[j - 1] == 1:
                     p_contribution -= 1
                 if (i != 0) and grid[i - 1][j] == 1:
                     p_contribution -= 1
-                if (i != i_thresh): 
+                if (i != i_thresh):
                     if grid[i + 1][j] == 1:
                         p_contribution -= 1
                 perimeter += p_contribution
