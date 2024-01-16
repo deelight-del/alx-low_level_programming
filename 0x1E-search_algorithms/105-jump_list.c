@@ -21,9 +21,9 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		prev_idx = idx_count;
 		for (i = 0; i < (int)(sqrt(size)); i++)
 		{
-			idx_count++;
 			if (present->next == NULL)
 				break;
+			idx_count++;
 			present = present->next;
 		}
 		printf("Value checked at index [%d] = [%d]\n",
