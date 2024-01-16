@@ -7,4 +7,5 @@ int compare_and_print(size_t idx, int val_from_array, int val_to_compare);
 void print_array(int *array, int start_idx, int end_idx);
 int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
+int exponential_search(int *array, size_t size, int value);
 #endif
