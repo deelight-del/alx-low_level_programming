@@ -10,11 +10,11 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int start_idx = 0, end_idx = ((int)size) - 1, mid_idx = end_idx;
+	int start_idx = 0, end_idx = ((int)size) - 1, mid_idx = start_idx;
 
 	if (array == NULL)
 		return (-1);
-	while (start_idx < end_idx)
+	while (start_idx <= end_idx)
 	{
 		print_array(array, start_idx, end_idx);
 		mid_idx = (start_idx + end_idx) / 2;
@@ -25,9 +25,11 @@ int binary_search(int *array, size_t size, int value)
 		else if (value < array[mid_idx])
 			end_idx = mid_idx - 1;
 	}
-	print_array(array, start_idx, end_idx);
 	if (value == array[mid_idx])
+	{
+		print_array(array, start_idx, end_idx);
 		return (mid_idx);
+	}
 	return (-1);
 }
 
