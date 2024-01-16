@@ -1,19 +1,21 @@
 #include "search_algos.h"
+#include <math.h>
 /**
- * linear_search - Function to search within an array using linear search.
+ * linear_search_jump - Function to search within an array using linear search.
  * @array: A pointer to the first element of the array to search in.
- * @size: The number of elements in the array.
+ * @start: The begin of the array to search for.
+ * @end: The end of the array to seach for
  * @value: The value to search for.
  *
  * Return: idx of value in array, if value is present; -1 otherwise.
  */
-int linear_search(int *array, size_t size, int value)
+int linear_search_jump(int *array, size_t start, size_t end, int value)
 {
 	size_t i;
 
 	if (array == NULL)
 		return (-1);
-	for (i = 0; i < size; i++)
+	for (i = start; i <= end; i++)
 	{
 		if (compare_and_print(i, array[i], value) == 0)
 			return ((int) i);
@@ -52,5 +54,29 @@ int compare_and_print(size_t idx, int val_from_array, int val_to_compare)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int initial_jump = 0;
+	int initial_jump = 0, prev_jump = 0;
+	size_t start, end;
+
+	while (initial_jump < (int)size)
+	{
+		if (array[initial_jump] < value)
+		{
+			printf("Value checked array[%d] = [%d]\n",
+					initial_jump, array[initial_jump]);
+			prev_jump = initial_jump;
+			initial_jump += sqrt(size);
+			continue;
+		}
+		break;
+	}
+	start = (size_t)prev_jump;
+	if (start + sqrt(size) < size - 1)
+		end = (size_t)(start + sqrt(size));
+	else
+		end = size - 1;
+	printf("Value found between indexex [%lu] and [%lu]\n",
+			start, (size_t)(start + sqrt(size)));
+	if (linear_search_jump(array, start, end, value) == -1)
+		return (-1);
+	return (linear_search_jump(array, start, end, value));
 }
