@@ -15,9 +15,9 @@ int advanced_binary_help(int *array, int start, int end, int value)
 
 	print_array(array, start, end);
 	if (value == array[start])
-		return (search_backward(array, start, value));
+		return (start);
 	if (value == array[end])
-		return (search_backward(array, end, value));
+		return (end);
 	if (start > end)
 		return (-1);
 	mid = (start + end) / 2;
