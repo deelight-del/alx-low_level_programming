@@ -3,7 +3,6 @@
 /**
  * linear_skip - Function to initiate skip list search algo with LList.
  * @list: head of the linkedList to search on.
- * @size: The size of the linkedList.
  * @value: The value to search for.
  *
  * Return: The pointer to the found integer or NULL otherwise.
@@ -15,8 +14,10 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 
 	if (list == NULL)
 		return (NULL);
-	if (value == list->n)
-		return (list);
+	/**
+	* if (value == list->n)
+	*	return (list);
+	*/
 	while (next->express != NULL)
 	{
 		prev = next;
