@@ -1,5 +1,25 @@
 #include "search_algos.h"
 /**
+ * search_backward - Function to search bacward when a given key is found.
+ * @array: The given array to search backward on.
+ * @anchor: Where the search begins from.
+ * @value: Value to search for.
+ *
+ * Return: The anchor or some other value.
+ */
+int search_backward(int *array, int anchor, int value)
+{
+	int i = anchor;
+
+	while (i > 0 && array[i] == value)
+		i--;
+	if (i == 0 && array[i] == value)
+		return (i);
+	else
+		return (i + 1);
+}
+
+/**
  * advanced_binary_help - This uses the half-interval method to search through
  * a record, halving the set of records each time, using recursion.
  * @array: This is a pointer to the first element to search in.
@@ -15,9 +35,9 @@ int advanced_binary_help(int *array, int start, int end, int value)
 
 	print_array(array, start, end);
 	if (value == array[start])
-		return (start);
+		return (search_backward(array, start, value));
 	if (value == array[end])
-		return (end);
+		return (search_backward(array, end, value));
 	if (start > end)
 		return (-1);
 	mid = (start + end) / 2;
