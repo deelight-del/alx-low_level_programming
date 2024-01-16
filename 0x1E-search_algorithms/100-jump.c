@@ -54,7 +54,7 @@ int compare_and_print(size_t idx, int val_from_array, int val_to_compare)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int initial_jump = 0, prev_jump = 0;
+	int initial_jump = 0, prev_jump = 0, result;
 	size_t start, end;
 
 	while (initial_jump < (int)size)
@@ -76,7 +76,9 @@ int jump_search(int *array, size_t size, int value)
 		end = size - 1;
 	printf("Value found between indexex [%lu] and [%lu]\n",
 			start, (size_t)(start + sqrt(size)));
-	if (linear_search_jump(array, start, end, value) == -1)
+
+	result = linear_search_jump(array, start, end, value) == -1;
+	if (result == -1)
 		return (-1);
-	return (linear_search_jump(array, start, end, value));
+	return (result);
 }
