@@ -74,10 +74,10 @@ int jump_search(int *array, size_t size, int value)
 		end = (size_t)(start + sqrt(size));
 	else
 		end = size - 1;
-	printf("Value found between indexex [%lu] and [%lu]\n",
+	printf("Value found between indexes [%lu] and [%lu]\n",
 			start, (size_t)(start + sqrt(size)));
 
-	result = linear_search_jump(array, start, end, value) == -1;
+	result = linear_search_jump(array, start, end, value);
 	if (result == -1)
 		return (-1);
 	return (result);
