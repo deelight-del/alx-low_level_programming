@@ -57,6 +57,8 @@ int jump_search(int *array, size_t size, int value)
 	int initial_jump = 0, prev_jump = 0, result;
 	size_t start, end;
 
+	if (array == NULL)
+		return (-1);
 	while (initial_jump < (int)size)
 	{
 		if (array[initial_jump] < value)
